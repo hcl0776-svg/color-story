@@ -11,9 +11,7 @@ import { motion } from 'motion/react';
 import { StartButton } from './components/StartButton';
 import { PAINT_COLORS } from './constants/colors';
 import { COLOR_DATA } from './constants/colorData';
-
-const backgroundImage = 'https://ais-pre-f7uzmfkteogpslyxxxzlqe-44940172969.asia-northeast1.run.app/background.jpg';
-const logoImage = 'https://ais-pre-f7uzmfkteogpslyxxxzlqe-44940172969.asia-northeast1.run.app/logo.png';
+import { BACKGROUND_IMAGE, LOGO_IMAGE } from './constants/images';
 
 export default function App() {
   const [step, setStep] = useState(1);
@@ -64,7 +62,7 @@ export default function App() {
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `url(${BACKGROUND_IMAGE})` }}
     >
       <div 
         className="w-full max-w-md h-[100dvh] relative overflow-hidden flex items-center justify-center"
@@ -81,7 +79,7 @@ export default function App() {
               <div className="flex flex-col items-center gap-8 -translate-y-[85px]">
                 {/* Logo Placeholder */}
                 <img 
-                  src={logoImage} 
+                  src={LOGO_IMAGE} 
                   alt="Logo" 
                   className="w-[130px] h-[130px] object-contain translate-y-[42px]" 
                   onError={(e) => e.currentTarget.style.display = 'none'} 
