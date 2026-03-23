@@ -12,6 +12,9 @@ import { StartButton } from './components/StartButton';
 import { PAINT_COLORS } from './constants/colors';
 import { COLOR_DATA } from './constants/colorData';
 
+import backgroundImage from './assets/background.jpg';
+import logoImage from './assets/logo.png';
+
 export default function App() {
   const [step, setStep] = useState(1);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -61,7 +64,7 @@ export default function App() {
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: "url('/background.jpg')" }}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div 
         className="w-full max-w-md h-[100dvh] relative overflow-hidden flex items-center justify-center"
@@ -78,7 +81,7 @@ export default function App() {
               <div className="flex flex-col items-center gap-8 -translate-y-[85px]">
                 {/* Logo Placeholder */}
                 <img 
-                  src="/logo.png" 
+                  src={logoImage} 
                   alt="Logo" 
                   className="w-[130px] h-[130px] object-contain translate-y-[42px]" 
                   onError={(e) => e.currentTarget.style.display = 'none'} 
