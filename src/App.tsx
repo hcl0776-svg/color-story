@@ -7,7 +7,7 @@
 
 import { useState, useEffect } from 'react';
 import { Check, ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { StartButton } from './components/StartButton';
 import { PAINT_COLORS } from './constants/colors';
 import { COLOR_DATA } from './constants/colorData';
@@ -69,10 +69,19 @@ export default function App() {
       >
         {/* Content Layer */}
         <div 
-          className={`relative z-10 flex flex-col rounded-3xl shadow-2xl overflow-y-auto overflow-x-hidden ${
+          className={`relative z-10 flex flex-col rounded-3xl shadow-2xl overflow-y-auto overflow-x-hidden transition-all duration-500 ${
             step === 1 ? 'w-[85%] h-[85%] bg-white/75 backdrop-blur-sm' : 'w-[90%] h-[90%] bg-white/85 backdrop-blur-sm'
           }`}
         >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="w-full h-full flex flex-col"
+            >
           {/* Step 1: Start */}
           {step === 1 && (
             <div className="flex flex-col items-center justify-center h-full p-6 gap-8">
@@ -298,6 +307,8 @@ export default function App() {
             </div>
           </div>
         )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
