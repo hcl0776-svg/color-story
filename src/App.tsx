@@ -12,8 +12,8 @@ import { StartButton } from './components/StartButton';
 import { PAINT_COLORS } from './constants/colors';
 import { COLOR_DATA } from './constants/colorData';
 
-import backgroundImage from './assets/background.jpg';
-import logoImage from './assets/logo.png';
+const backgroundImage = 'https://ais-pre-f7uzmfkteogpslyxxxzlqe-44940172969.asia-northeast1.run.app/background.jpg';
+const logoImage = 'https://ais-pre-f7uzmfkteogpslyxxxzlqe-44940172969.asia-northeast1.run.app/logo.png';
 
 export default function App() {
   const [step, setStep] = useState(1);
