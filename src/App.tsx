@@ -84,18 +84,18 @@ export default function App() {
             >
           {/* Step 1: Start */}
           {step === 1 && (
-            <div className="flex flex-col items-center justify-center h-full p-6 gap-8">
-              <div className="flex flex-col items-center gap-8 -translate-y-[85px]">
+            <div className="flex flex-col items-center justify-center h-full p-4 overflow-hidden">
+              <div className="flex flex-col items-center gap-1 -translate-y-[30px]">
                 {/* Logo Placeholder */}
                 <img 
                   src={LOGO_IMAGE} 
                   alt="Logo" 
-                  className="w-[130px] h-[130px] object-contain translate-y-[42px]" 
+                  className="w-[120px] h-[120px] object-contain translate-y-[15px]" 
                   onError={(e) => e.currentTarget.style.display = 'none'} 
                 />
-                <h1 className="text-[85px] font-['East_Sea_Dokdo'] text-center leading-none drop-shadow-lg text-gray-800">마음에<br/>색을 심다.</h1>
+                <h1 className="text-[100px] font-['East_Sea_Dokdo'] text-center leading-[0.85] drop-shadow-lg text-gray-800">마음의<br/>색을<br/>그리다</h1>
               </div>
-              <div className="h-32 w-full flex items-center justify-center">
+              <div className="w-full flex items-center justify-center shrink-0 -translate-y-[35px]">
                 <StartButton onClick={() => setStep(2)} className="scale-[0.325] origin-center drop-shadow-xl" />
               </div>
             </div>
